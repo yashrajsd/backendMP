@@ -30,8 +30,6 @@ httpServer.listen(PORT, () => {
 app.get('/api/room/:roomId', async (req, res) => {
   try {
     const roomId = req.params.roomId;
-
-    // Use your MongoDB model (e.g., Room) to find the room by its ID
     const room = await Room.findOne({ name: roomId });
 
     if (!room) {
