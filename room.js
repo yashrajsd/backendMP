@@ -75,7 +75,7 @@ class SocketRoom {
         console.log(this.roomsState[roomIndex].users)
         if (this.roomsState[roomIndex].users === 0) {
           deleteEmptyRoom(roomId)
-          this.roomsState.splice(roomIndex, 1); // Remove the room from the array
+          this.roomsState.splice(roomIndex, 1); 
           console.log('room Deleted')
         }
       }
