@@ -15,11 +15,8 @@ function serverSocket(server,rooms){
         socket.on('disconnect', () => {
           console.log('User disconnected');
     
-          // Check if the user is associated with a room
           if (socketToRoomUserMap.has(socket.id)) {
             const { roomId, userId } = socketToRoomUserMap.get(socket.id);
-    
-            // Notify the room about the user leaving
             io.to(roomId).emit('userLeft', userId);
     
             rooms.leaveRoom(roomId);
